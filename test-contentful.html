@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contentful 連接測試</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .test-result {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            background: #f8f9fa;
+        }
+        .success { border-left-color: #27ae60; background: #d4edda; }
+        .error { border-left-color: #e74c3c; background: #f8d7da; }
+        .loading { border-left-color: #f39c12; background: #fff3cd; }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+        button:hover { background: #2980b9; }
+        pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Contentful 連接測試</h1>
+        
+        <div class="test-controls">
+            <button onclick="testConnection()">測試連接</button>
+            <button onclick="testSpecificEntry()">測試特定條目</button>
+            <button onclick="testSubscriptions()">測試訂閱數據</button>
+            <button onclick="testFoodItems()">測試食品數據</button>
+        </div>
+        
+        <div id="results"></div>
+    </div>
+
+    <script src="contentful-config.js"></script>
+    <script>
+        function addResult(message, type = 'test-result') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = message;
+            results.appendChild(div);
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        async function testConnection() {
+            clearResults();
+            addResult('🔄 正在測試 Contentful 連接...', 'loading');
+            
+            try {
+                await window.contentfulClient.initClient();
+                addResult('✅ Contentful 連接成功！', 'success');
+                
+                // 測試基本 API 調用
+                const space = await window.contentfulClient.client.getSpace();
+                addResult(`📦 Space 資訊: ${space.name} (${space.sys.id})`, 'success');
+                
+            } catch (error) {
+                addResult(`❌ 連接失敗: ${error.message}`, 'error');
+                console.error('連接測試失敗:', error);
+            }
+        }
+
+        async function testSpecificEntry() {
+            addResult('🔄 正在測試特定條目 (40rkbJPksuD0EpKa07QlY6)...', 'loading');
+            
+            try {
+                const entry = await window.contentfulClient.getEntry('40rkbJPksuD0EpKa07QlY6');
+                addResult('✅ 條目獲取成功！', 'success');
+                addResult(`<pre>${JSON.stringify(entry, null, 2)}</pre>`);
+                
+            } catch (error) {
+                addResult(`❌ 條目獲取失敗: ${error.message}`, 'error');
+                console.error('條目測試失敗:', error);
+            }
+        }
+
+        async function testSubscriptions() {
+            addResult('🔄 正在測試訂閱數據...', 'loading');
+            
+            try {
+                const subscriptions = await window.contentfulClient.getSubscriptions();
+                addResult(`✅ 找到 ${subscriptions.length} 個訂閱項目`, 'success');
+                
+                if (subscriptions.length > 0) {
+                    subscriptions.forEach((sub, index) => {
+                        addResult(`📋 訂閱 ${index + 1}: ${sub.fields.name || '未命名'}`);
+                    });
+                } else {
+                    addResult('ℹ️ 沒有找到訂閱數據，請確認 Contentful 中是否有 "subscription" 內容類型', 'loading');
+                }
+                
+            } catch (error) {
+                addResult(`❌ 訂閱數據測試失敗: ${error.message}`, 'error');
+                console.error('訂閱測試失敗:', error);
+            }
+        }
+
+        async function testFoodItems() {
+            addResult('🔄 正在測試食品數據...', 'loading');
+            
+            try {
+                const foodItems = await window.contentfulClient.getFoodItems();
+                addResult(`✅ 找到 ${foodItems.length} 個食品項目`, 'success');
+                
+                if (foodItems.length > 0) {
+                    foodItems.forEach((item, index) => {
+                        addResult(`🍱 食品 ${index + 1}: ${item.fields.name || '未命名'}`);
+                    });
+                } else {
+                    addResult('ℹ️ 沒有找到食品數據，請確認 Contentful 中是否有 "foodItem" 內容類型', 'loading');
+                }
+                
+            } catch (error) {
+                addResult(`❌ 食品數據測試失敗: ${error.message}`, 'error');
+                console.error('食品測試失敗:', error);
+            }
+        }
+
+        // 頁面載入時自動測試連接
+        window.addEventListener('load', () => {
+            setTimeout(testConnection, 1000);
+        });
+    </script>
+</body>
+</html>

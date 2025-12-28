@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 鋒兄AI資訊系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 頂部導航 -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="robot-icon">🤖</span>
+            <span class="brand-text">鋒兄AI資訊系統</span>
+        </div>
+        
+        <!-- 手機版選單按鈕 -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- 桌面版選單 -->
+        <div class="nav-menu desktop-menu">
+            <a href="#home" class="nav-item active" data-page="home">
+                🏠 首頁
+            </a>
+            <a href="#dashboard" class="nav-item" data-page="dashboard">
+                📊 儀表板
+            </a>
+            <a href="#food" class="nav-item" data-page="food">
+                🍱 食品管理
+            </a>
+            <a href="#subscription" class="nav-item" data-page="subscription">
+                📋 訂閱管理
+            </a>
+            <a href="#images" class="nav-item" data-page="images">
+                🖼️ 圖片庫
+            </a>
+            <a href="#video" class="nav-item" data-page="video">
+                🎬 影片庫
+            </a>
+            <a href="#music" class="nav-item" data-page="music">
+                🎵 鋒兄音樂歌詞
+            </a>
+        </div>
+    </nav>
+
+    <!-- 手機版側邊選單 -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-sidebar">
+            <div class="mobile-menu-header">
+                <div class="mobile-brand">
+                    <span class="robot-icon">🤖</span>
+                    <span class="brand-text">鋒兄AI</span>
+                </div>
+                <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+            </div>
+            <div class="mobile-menu-content">
+                <a href="#home" class="mobile-nav-item active" data-page="home">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">首頁</span>
+                </a>
+                <a href="#dashboard" class="mobile-nav-item" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">儀表板</span>
+                </a>
+                <a href="#food" class="mobile-nav-item" data-page="food">
+                    <span class="nav-icon">🍱</span>
+                    <span class="nav-text">食品管理</span>
+                </a>
+                <a href="#subscription" class="mobile-nav-item" data-page="subscription">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text">訂閱管理</span>
+                </a>
+                <a href="#images" class="mobile-nav-item" data-page="images">
+                    <span class="nav-icon">🖼️</span>
+                    <span class="nav-text">圖片庫</span>
+                </a>
+                <a href="#video" class="mobile-nav-item" data-page="video">
+                    <span class="nav-icon">🎬</span>
+                    <span class="nav-text">影片庫</span>
+                </a>
+                <a href="#music" class="mobile-nav-item" data-page="music">
+                    <span class="nav-icon">🎵</span>
+                    <span class="nav-text">音樂歌詞</span>
+                </a>
+            </div>
+            <div class="mobile-menu-footer">
+                <div class="mobile-copyright">
+                    © 2025 鋒兄塗哥公關資訊
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <main class="main-content">
+        <!-- 首頁 -->
+        <div id="home" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="robot-avatar">🤖</div>
+                    <h1>鋒兄AI資訊系統</h1>
+                    <p>集中管理您的影片和圖片收藏，支援智能分類和快速搜尋</p>
+                </div>
+            </div>
+
+            <div class="tech-info">
+                <p>鋒兄塗哥公關資訊© 版權所有 2025～2125</p>
+                <div class="tech-stack">
+                    <div class="tech-item">🔥 前端：Vanilla JS</div>
+                    <div class="tech-item">🔒 後端：Contentful</div>
+                    <div class="tech-item">🌐 網頁存放：GitHub Pages</div>
+                    <div class="tech-item">🎬 影片存放：Contentful</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 儀表板頁面 -->
+        <div id="dashboard" class="page">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="robot-avatar">🤖</div>
+                    <h1>鋒兄AI資訊系統</h1>
+                    <p>集中管理您的影片和圖片收藏，支援智能分類和快速搜尋</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💳</div>
+                    <div class="stat-content">
+                        <h3>訂閱服務</h3>
+                        <div class="stat-number">24</div>
+                        <p>個活躍訂閱</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <h3>食品項目</h3>
+                        <div class="stat-number">13</div>
+                        <p>個食品項目</p>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-content">
+                        <h3>緊急提醒</h3>
+                        <div class="stat-number">0</div>
+                        <p>個待處理事項</p>
+                    </div>
+                </div>
+                <div class="stat-card info">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <h3>近期提醒</h3>
+                        <div class="stat-number">5</div>
+                        <p>個近日需關注</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="management-sections">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3>📋 訂閱管理</h3>
+                        <a href="#" class="view-all">查看全部</a>
+                    </div>
+                    <div class="section-content">
+                        <div class="item">📁 7天內到期 (2)</div>
+                    </div>
+                </div>
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3>🍱 食品管理</h3>
+                        <a href="#" class="view-all">查看全部</a>
+                    </div>
+                    <div class="section-content">
+                        <div class="item">📁 30天內到期 (3)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-info">
+                <p>鋒兄塗哥公關資訊© 版權所有 2025～2125</p>
+                <div class="tech-stack">
+                    <div class="tech-item">🔥 前端：Vanilla JS</div>
+                    <div class="tech-item">🔒 後端：Contentful</div>
+                    <div class="tech-item">🌐 網頁存放：GitHub Pages</div>
+                    <div class="tech-item">🎬 影片存放：Contentful</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 食品管理頁面 -->
+        <div id="food" class="page">
+            <div class="page-header">
+                <h2>🍱 食品管理</h2>
+                <p>管理您的食品庫存與保存期限</p>
+                <div class="page-actions">
+                    <button class="action-btn primary" onclick="window.fengAI.showAddFoodModal()">
+                        ➕ 新增食品
+                    </button>
+                    <button class="action-btn secondary" onclick="window.fengAI.refreshFoodItems()">
+                        🔄 重新載入
+                    </button>
+                </div>
+            </div>
+
+            <div class="info-banner">
+                📋 食品接近到期提醒（當小提醒的佔比下降）
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3>總價值</h3>
+                        <div class="stat-number">NT$ 150</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <h3>食品數量</h3>
+                        <div class="stat-number">13</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔔</div>
+                    <div class="stat-content">
+                        <h3>7天內過期</h3>
+                        <div class="stat-number">0</div>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-content">
+                        <h3>30天內過期</h3>
+                        <div class="stat-number">3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="food-categories">
+                <!-- 食品項目將由 JavaScript 動態生成 -->
+            </div>
+        </div>
+
+        <!-- 圖片庫頁面 -->
+        <div id="images" class="page">
+            <!-- 文件瀏覽器風格的標題欄 -->
+            <div class="file-browser-header">
+                <div class="breadcrumb">
+                    <span class="path-item">📁 images</span>
+                </div>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">🔲 網格</button>
+                    <button class="view-btn" data-view="list">📋 列表</button>
+                </div>
+            </div>
+
+            <!-- 圖片統計資訊 -->
+            <div class="file-info-bar">
+                <span class="file-count">共 <span id="imageCount">0</span> 個項目</span>
+                <span class="total-size">總大小: <span id="totalSize">0 MB</span></span>
+            </div>
+
+            <!-- 搜尋欄 -->
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" placeholder="在 images 中搜尋..." class="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+
+            <!-- 圖片網格 -->
+            <div class="file-grid" id="imagesGrid">
+                <div class="loading-placeholder">
+                    <div class="loading-icon">📁</div>
+                    <p>正在載入 images 目錄內容...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 訂閱管理頁面 -->
+        <div id="subscription" class="page">
+            <div class="page-header">
+                <h2>📋 訂閱管理</h2>
+                <p>管理您的所有訂閱服務</p>
+                <div class="page-actions">
+                    <button class="action-btn primary" onclick="window.fengAI.showAddSubscriptionModal()">
+                        ➕ 新增訂閱
+                    </button>
+                    <button class="action-btn secondary" onclick="window.fengAI.refreshSubscriptions()">
+                        🔄 重新載入
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <h3>每月總支出</h3>
+                        <div class="stat-number">NT$ 7,933</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <h3>訂閱數量</h3>
+                        <div class="stat-number">24</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔔</div>
+                    <div class="stat-content">
+                        <h3>3天內到期</h3>
+                        <div class="stat-number">0</div>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-content">
+                        <h3>7天內到期</h3>
+                        <div class="stat-number">2</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subscription-list">
+                <!-- 訂閱項目將由 JavaScript 動態生成 -->
+            </div>
+        </div>
+
+        <!-- 影片庫頁面 -->
+        <div id="video" class="page">
+            <div class="page-header">
+                <h2>🎬 鋒兄影片庫</h2>
+                <p>展示 videos 資料夾中的精彩影片內容</p>
+            </div>
+
+            <div class="video-stats">
+                <div class="stats-card purple">
+                    <div class="stats-icon">🎬</div>
+                    <div class="stats-content">
+                        <h3>影片雲端管理</h3>
+                        <p>輕鬆影片收藏，瞬間觀看者提供的精彩內容</p>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <span class="label">影片數量：</span>
+                                <span class="value">2</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">總時長：</span>
+                                <span class="value">約 15 分鐘</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">狀態：</span>
+                                <span class="value">可播放</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 影片列表 -->
+            <div class="video-gallery">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <video controls preload="metadata" class="video-player">
+                            <source src="videos/19700121-1829-693fd940cd0c8191af04953c73c1f019_CZ0IkvUH.mp4" type="video/mp4">
+                            您的瀏覽器不支援影片播放
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶️</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">🔥 鋒兄進化Show（Sora2）</h3>
+                        <p class="video-description">展示最新的 Sora2 技術進化內容</p>
+                        <div class="video-meta">
+                            <span class="video-duration">約 8 分鐘</span>
+                            <span class="video-format">MP4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <video controls preload="metadata" class="video-player">
+                            <source src="videos/clideo-editor-92eb6755d77b4603a482c25764865a58_7sLjgTgc.mp4" type="video/mp4">
+                            您的瀏覽器不支援影片播放
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶️</div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">🔥 鋒兄進化Show（音樂MV）</h3>
+                        <p class="video-description">精彩的音樂MV內容展示</p>
+                        <div class="video-meta">
+                            <span class="video-duration">約 7 分鐘</span>
+                            <span class="video-format">MP4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 鋒兄音樂歌詞頁面 -->
+        <div id="music" class="page">
+            <div class="page-header">
+                <h2>🎵 鋒兄音樂歌詞</h2>
+                <p>收藏您喜愛的音樂與歌詞</p>
+            </div>
+
+            <div class="music-stats">
+                <div class="stats-card music-gradient">
+                    <div class="stats-icon">🎵</div>
+                    <div class="stats-content">
+                        <h3>音樂歌詞管理</h3>
+                        <p>整理您的音樂收藏，保存珍貴的歌詞記憶</p>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <span class="label">歌曲數量：</span>
+                                <span class="value" id="songCount">6</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">歌詞收藏：</span>
+                                <span class="value" id="lyricsCount">2</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="label">語言版本：</span>
+                                <span class="value" id="languageCount">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 音樂播放器 -->
+            <div class="music-player-section">
+                <div class="music-player-card">
+                    <div class="player-header">
+                        <h3>🎧 音樂播放器</h3>
+                        <div class="language-selector">
+                            <button class="lang-btn active" data-lang="zh">中文</button>
+                            <button class="lang-btn" data-lang="en">English</button>
+                            <button class="lang-btn" data-lang="ja">日本語</button>
+                        </div>
+                    </div>
+                    
+                    <div class="song-selector">
+                        <div class="song-tabs">
+                            <button class="song-tab active" data-song="marriage">最瞎結婚理由</button>
+                            <button class="song-tab" data-song="evolution">鋒兄進化Show🔥</button>
+                        </div>
+                    </div>
+
+                    <div class="audio-player">
+                        <audio id="musicPlayer" controls preload="metadata">
+                            <source src="musics/最瞎結婚理由.mp3" type="audio/mpeg">
+                            您的瀏覽器不支援音頻播放
+                        </audio>
+                        <div class="now-playing">
+                            <div class="song-info">
+                                <div class="song-title" id="currentSongTitle">最瞎結婚理由</div>
+                                <div class="song-artist">鋒兄 & 塗哥</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 歌詞顯示區域 -->
+            <div class="lyrics-display-section">
+                <div class="lyrics-card">
+                    <div class="lyrics-header">
+                        <h3 id="lyricsTitle">📝 最瞎結婚理由 - 歌詞</h3>
+                        <div class="lyrics-controls">
+                            <button class="lyrics-btn" id="toggleLyrics">隱藏歌詞</button>
+                            <button class="lyrics-btn" id="copyLyrics">複製歌詞</button>
+                        </div>
+                    </div>
+                    <div class="lyrics-content" id="lyricsContent">
+                        <!-- 歌詞內容將由 JavaScript 動態載入 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 歌曲列表 -->
+            <div class="song-list-section">
+                <div class="song-list-card">
+                    <h3>🎼 歌曲列表</h3>
+                    <div class="song-grid">
+                        <div class="song-item" data-song="marriage">
+                            <div class="song-icon">💕</div>
+                            <div class="song-details">
+                                <h4>最瞎結婚理由</h4>
+                                <p>鋒兄 & 塗哥的爆笑結婚故事</p>
+                                <div class="song-versions">
+                                    <span class="version-tag">中文</span>
+                                    <span class="version-tag">English</span>
+                                    <span class="version-tag">日本語</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="song-item" data-song="evolution">
+                            <div class="song-icon">🔥</div>
+                            <div class="song-details">
+                                <h4>鋒兄進化Show🔥</h4>
+                                <p>從榜首到市長的進化之路</p>
+                                <div class="song-versions">
+                                    <span class="version-tag">中文</span>
+                                    <span class="version-tag">English</span>
+                                    <span class="version-tag">日本語</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 訂閱管理模態框 -->
+    <div id="subscriptionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="subscriptionModalTitle">新增訂閱</h3>
+                <button class="close-btn" onclick="window.fengAI.closeModal('subscriptionModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="subscriptionForm">
+                    <div class="form-group">
+                        <label for="subName">服務名稱 *</label>
+                        <input type="text" id="subName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subUrl">管理頁面 URL</label>
+                        <input type="url" id="subUrl" name="url">
+                    </div>
+                    <div class="form-group">
+                        <label for="subPrice">月費 (NT$) *</label>
+                        <input type="number" id="subPrice" name="price" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subNextPayment">下次付款日期 *</label>
+                        <input type="date" id="subNextPayment" name="nextPayment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subIcon">圖標</label>
+                        <select id="subIcon" name="icon">
+                            <option value="📋">📋 一般</option>
+                            <option value="💻">💻 軟體</option>
+                            <option value="🎵">🎵 音樂</option>
+                            <option value="🎬">🎬 影片</option>
+                            <option value="🏥">🏥 醫療</option>
+                            <option value="🌿">🌿 工具</option>
+                            <option value="🎮">🎮 遊戲</option>
+                            <option value="📚">📚 教育</option>
+                            <option value="☁️">☁️ 雲端</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn secondary" onclick="window.fengAI.closeModal('subscriptionModal')">取消</button>
+                <button type="button" class="btn primary" onclick="window.fengAI.saveSubscription()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 食品管理模態框 -->
+    <div id="foodModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="foodModalTitle">新增食品</h3>
+                <button class="close-btn" onclick="window.fengAI.closeModal('foodModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="foodForm">
+                    <div class="form-group">
+                        <label for="foodName">食品名稱 *</label>
+                        <input type="text" id="foodName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foodCategory">分類</label>
+                        <select id="foodCategory" name="category">
+                            <option value="snacks">零食</option>
+                            <option value="beverages">飲料</option>
+                            <option value="canned">罐頭</option>
+                            <option value="frozen">冷凍食品</option>
+                            <option value="dairy">乳製品</option>
+                            <option value="condiments">調味料</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="foodExpiryDate">到期日期 *</label>
+                        <input type="date" id="foodExpiryDate" name="expiryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foodValue">價值 (NT$)</label>
+                        <input type="number" id="foodValue" name="value" min="0" step="0.01">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn secondary" onclick="window.fengAI.closeModal('foodModal')">取消</button>
+                <button type="button" class="btn primary" onclick="window.fengAI.saveFoodItem()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="contentful-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
